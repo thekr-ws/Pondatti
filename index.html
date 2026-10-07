@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You ❤️</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .reveal-anim {
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-pink-50 h-screen flex items-center justify-center font-sans selection:bg-pink-200">
+
+    <div class="bg-white p-10 rounded-3xl shadow-2xl text-center max-w-md mx-5 border border-pink-100">
+        <!-- Floating Heart Animation -->
+        <div class="text-5xl animate-bounce mb-4">💌</div>
+        
+        <h1 class="text-3xl font-extrabold text-pink-600 mb-2">To my Pondatti</h1>
+        
+        <button id="revealBtn" class="mt-6 bg-pink-500 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-pink-600 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+            Tap to open
+        </button>
+
+        <!-- Hidden Message -->
+        <div id="secretMessage" class="hidden mt-8">
+            <p class="text-yellow-800 text-xl font-medium leading-relaxed italic border-l-4 border-pink-400 pl-4 text-left">
+                "I'll be there for you. Even sometimes not physically but always as soulfully.🫶🏻😘🫠"
+            </p>
+            <p class="mt-6 text-pink-500 font-semibold text-lg">Yours Purushaa💐💍❤️</p>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.getElementById('revealBtn');
+        const msg = document.getElementById('secretMessage');
+
+        btn.addEventListener('click', () => {
+            btn.classList.add('hidden');
+            msg.classList.remove('hidden');
+            msg.classList.add('reveal-anim');
+        });
+    </script>
+</body>
+</html>
 
